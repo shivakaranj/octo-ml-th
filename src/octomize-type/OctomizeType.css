@@ -1,0 +1,75 @@
+.octomize-type-container {
+	margin-bottom: 68px;
+}
+
+.accordion {
+	margin-top: 16px;
+}
+
+.accordion-button {
+	background-color: #ffffff !important;
+	height: 80px;
+}
+
+.form-check-input:checked {
+	background-color: #0180ff;
+	border-color: #0180ff;
+}
+
+.header-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.accordion-body {
+	display: flex;
+	height: 80px;
+}
+
+.input-group-text {
+	background-color: #ffffff;
+	border: none;
+}
+
+.engine-label {
+	padding: 10px 0 5px;
+	font-size: 14px;
+}
+
+.num-trials,
+.run-trials,
+.kernel-trials {
+	display: flex;
+	padding: 10px;
+	margin-left: 24px;
+}
+
+.num-trials-label,
+.run-trials-label,
+.kernel-trials-label {
+	font-size: 14px;
+	padding-right: 8px;
+	font-weight: 700;
+}
+
+.num-trials-field,
+.run-trials-field,
+.kernel-trials-field {
+	width: 150px;
+	height: 32px;
+	bottom: 5px;
+	position: relative;
+}
+
+.action-type {
+	text-transform: capitalize;
+	font-weight: bold;
+	font-size: 14px;
+	color: #212529;
+}
+
+.action-help-text {
+	font-size: 14px;
+	font-weight: 300;
+	color: #111827;
+}
