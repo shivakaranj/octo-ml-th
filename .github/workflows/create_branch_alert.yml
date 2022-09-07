@@ -7,9 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ (github.event.ref_type == 'branch') && startsWith(github.event.ref, 'release-') }}
     steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "::set-env name=BRANCH_NAME::$(echo ${{ github.event }} )"
+        id: extract_branch
       - uses: abinoda/slack-action@master
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         with:
-            args: '{\"channel\":\"${{ secrets.SLACK_CHANNEL_ID }}\",\"blocks\":[{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\"*axon-ui:* Release branch created "${GITHUB_REF#refs/heads/}\" !\"}}]}'
+            args: '{\"channel\":\"${{ secrets.SLACK_CHANNEL_ID }}\",\"blocks\":[{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\"*axon-ui:* Release branch created ${{ github.event.ref.name }} !\"}}]}'
         if: success()
