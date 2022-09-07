@@ -5,7 +5,7 @@ jobs:
   notify_merged_pull_request:
     name: Notify Slack on merged pull requests
     runs-on: ubuntu-latest
-      if: ${{ startsWith(github.ref, 'refs/heads/release-') }}
+      if: ${{ (github.event.ref_type == 'branch') && github.event.ref == 'release-2022-09' }}
 #     if: ${{ github.base_ref == 'release-**-**' && github.event.pull_request.merged == true }}
     steps:
       - uses: abinoda/slack-action@master
