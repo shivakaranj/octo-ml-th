@@ -1,5 +1,5 @@
 export enum EngineType {
-	ONNX = 'ONNX',
+	ONNX = 'ONNX!',
 	TVM = 'TVM',
 }
 
