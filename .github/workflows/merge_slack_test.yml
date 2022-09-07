@@ -4,13 +4,13 @@ on:
     types:
       - closed
     branches:    
-      - '^release-**-**$'
+      - '^release\-\d\d\d\d\-\d\d$'
 
 jobs:
   notify_merged_pull_request:
     name: Notify Slack on merged pull requests
     runs-on: ubuntu-latest
-    if: ${{ github.base_ref == '^release-**-**$' && github.event.pull_request.merged == true }}
+    if: ${{ github.base_ref == '^release\-\d\d\d\d\-\d\d$' && github.event.pull_request.merged == true }}
     steps:
       - uses: abinoda/slack-action@master
         env:
