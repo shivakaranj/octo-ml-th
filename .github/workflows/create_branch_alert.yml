@@ -11,5 +11,5 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         with:
-            args: '{\"channel\":\"${{ secrets.SLACK_CHANNEL_ID }}\",\"blocks\":[{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\"*axon-ui:* Release branch created "${{ GITHUB_REF#refs/heads/ }}\" !\"}}]}'
+            args: '{\"channel\":\"${{ secrets.SLACK_CHANNEL_ID }}\",\"blocks\":[{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\"*axon-ui:* Release branch created "${GITHUB_REF#refs/heads/}\" !\"}}]}'
         if: success()
